@@ -31,11 +31,16 @@ class _MyAppState extends State<MyApp> {
   int footerIndex = 0;
 
   void onFooterTap(int newIndex) {
-    setState(() {
-      footerIndex = newIndex;
-      _pageController.animateToPage(newIndex,
-          duration: const Duration(milliseconds: 500), curve: Curves.easeOut);
-    });
+    setState(
+      () {
+        footerIndex = newIndex;
+        _pageController.animateToPage(
+          newIndex,
+          duration: const Duration(milliseconds: 500),
+          curve: Curves.easeOut,
+        );
+      },
+    );
   }
 
   late PageController _pageController;
@@ -46,7 +51,6 @@ class _MyAppState extends State<MyApp> {
     _pageController = PageController();
   }
 
-  // int countOfClicks = 9009009009009009006;
   int countOfClicks = 0;
   int countOfGrandmas = 0;
   int countOfFarms = 0;
